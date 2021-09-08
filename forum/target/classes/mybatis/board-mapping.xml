@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.boardMapper">
+	<!-- #{변수명} -->
+	<!-- 데이터 저장 : insert --> 
+	<insert id="boardWrite" parameterType="boardDTO">
+		insert into board values 
+		(seq_board.nextval, #{id},#{subject}, #{content}, 0, sysdate,#{fileName, jdbcType=VARCHAR},#{original_fileName, jdbcType=VARCHAR})
+	</insert>
+	
+	<!-- 데이터 삭제 : delete --> 
+	<delete id="boardDelete" parameterType="int">
+		delete board where seq=#{seq}
+	</delete>
+	
+	<!-- 조회수 증가 : update --> 
+	<update id="updateHit" parameterType="int">
+		update board set hit=hit+1 where seq=#{seq}
+	</update>
+	
+	<!-- 글 수정 : update --> 
+	<update id="boardModify" parameterType="boardDTO">
+		update board set content=#{content} where seq=#{seq}
+	</update>	
+	
+	<!-- 글 수정 : update --> 
+	<update id="boardFileModify" parameterType="boardDTO">
+		update board set fileName=#{fileName, jdbcType=VARCHAR},original_fileName=#{original_fileName, jdbcType=VARCHAR} where seq=#{seq}
+	</update>	
+	
+	<!-- 목록보기 : select 
+		=> parameterType="java.util.Map" : 전달받을 매개변수값이 여러개 일 때 사용
+		=> resultType="boardDTO" : List에 저장될 값 설정
+	--> 
+	<select id="boardList" parameterType="java.util.Map" resultType="boardDTO">
+		<![CDATA[select seq, id, subject, content, hit, 
+				 to_char(logtime, 'YYYY.MM.DD')as logtime from 
+				 (select rownum rn, tt.* from 
+				 (select * from board order by seq desc) tt) 
+				 where rn>=#{startNum} and rn<=#{endNum}]]>
+	</select>
+	
+	<select id="searchList" parameterType="java.util.Map" resultType="boardDTO">
+		<![CDATA[select seq, id,subject, content, hit, 
+				 to_char(logtime, 'YYYY.MM.DD')as logtime from 
+				 (select rownum  rn, tt.* from 
+				 (select * from board where board.content like '%'||UPPER(#{search})||'%'
+                 or board.subject like '%'||UPPER(#{search})||'%'   order by seq desc) tt) 
+				 where rn>=#{startNum} and rn<=#{endNum}]]>
+	</select>
+	<!-- 상세보기 : select 
+		=> resultType="boardDTO" : 리턴값 설정
+	-->	
+	<select id="boardView" parameterType="int" resultType="boardDTO">
+		select * from board where seq=#{seq}
+	</select>
+	<!-- 총 목록 수 구하기 : select -->
+	<select id="getTotalA" resultType="int">
+		select count(*) as cnt from board
+	</select>
+	<!-- 총 목록 수 구하기 : select -->
+	<select id="getTotalB" parameterType="java.util.Map" resultType="int">
+		select count(*) as cnt from board where board.content like '%'||UPPER(#{search})||'%'
+                 or board.subject like '%'||UPPER(#{search})||'%'
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.commentMapper">
+
+		<insert id="commentWrite" parameterType="commentDTO">
+		
+			 insert into board_comment(bno,rno,comment_content,comment_writer,comment_group,comment_order,comment_depth)
+	        	values(#{bno},board_comment_seq.nextval,#{comment_content},#{comment_writer},comment_group.nextval,0,0)
+	        	
+		</insert>
+		
+		<select id="commentList" resultType="commentDTO" parameterType="commentDTO">
+				
+				select rno,comment_content,comment_writer,comment_regdate,comment_depth,comment_order,comment_group from board_comment
+				  where bno=#{bno} order by comment_group desc,comment_order asc		  	
+				
+		</select>
+		
+		<select id="getComment"  parameterType="commentDTO" resultType="int" >
+			 select count(*) as cnt from board_comment where bno=#{bno}
+		</select>	
+		
+		<select id="maxRno"   resultType="int" >
+			 select max(rno) from board_comment
+		</select>	
+		
+		<select id="maxOrder" parameterType="commentDTO"  resultType="int" >
+			 select max(comment_order) from board_comment where comment_group = #{comment_group}
+		</select>	
+				
+		
+		<delete id="commentDelete" parameterType="int">
+			delete board_comment where rno=#{rno}
+		</delete>
+		
+		<delete id="commentBnoDelete" parameterType="int">
+			delete board_comment where bno=#{bno}
+		</delete>
+			
+		<select id="commentView" parameterType="int" resultType="commentDTO">
+			select * from board_comment where rno = #{rno}
+		</select>		
+		
+		<update id="commentModify" parameterType="commentDTO">
+			update board_comment set comment_content=#{comment_content} where rno = #{rno}
+		</update>	
+		
+		<update id="commentUpdate" parameterType="commentDTO">
+			update board_comment set comment_group=#{comment_group},comment_depth=#{comment_depth},comment_order=#{comment_order} where rno = #{rno}
+		</update>	
+		
+		<update id="commentPlusOrder" parameterType="commentDTO">
+			update board_comment set comment_order=comment_order+1 where comment_group=#{comment_group} and comment_order>#{comment_order}
+		</update>	
+		
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
