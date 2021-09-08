@@ -12,7 +12,7 @@ public class BoardDTO {
 	private String logtime;				//-- 작성일
 	private int reply;  				//-- 코멘트
 	private String fileName;			//-- 파일이름
-	private String original_fileName;   //-- 오리지널 파일 이름		
+	private String original_fileName;   //-- 오리지널 파일 이름1
 	
 		
 	public String getOriginal_fileName() {
