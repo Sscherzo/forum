@@ -184,7 +184,7 @@ function fn_editReply(rno){
 	                   
 	                    
 	                    if(data[i].rno != rno){
-	                    	html += "<div><table class='table'><tr><td width=\"220\">"+data[i].comment_writer+'<a href="javascript:void(0)" onclick="fn_reReply(' +data[i].rno+ ' )">답글</a></td>';
+	                    	html += "<div><table class='table'><tr><td width=\"220\">"+data[i].comment_writer+'<a href="javascript:void(0)" onclick="fn_reReply(' +data[i].rno+ ' )">댓글</a></td>';
 	                    	html += "<td width=\"400\" align=\"left\">"+data[i].comment_content + "</td>";
 	                    	html += "<td align=\"center\">"+data[i].comment_regdate + "</td>";
 		                    html += "<td align=\"center\">"
@@ -258,7 +258,7 @@ function getCommentList(){
                     }
                     
                 	html += data[i].comment_writer
-                	html +='<a href="javascript:void(0)" onclick="fn_reReply(' +data[i].rno+ ')">답글</a></td>';
+                	html +='<a href="javascript:void(0)" onclick="fn_reReply(' +data[i].rno+ ')">댓글</a></td>';
                     html += "<td width=\"400\" align=\"left\">"+data[i].comment_content + "</td>";
                     html += "<td align=\"center\">"+data[i].comment_regdate + "</td>";
                     html += "<td align=\"center\">"
@@ -293,7 +293,7 @@ function getCommentList(){
 }
 
 /*
- *   '답글'을 눌렀을 때 대댓글을 적을수 있는 textarea가 나오고 depth를 '->'로 표현
+ *   '댓글'을 눌렀을 때 대댓글을 적을수 있는 textarea가 나오고 depth를 '->'로 표현
  */
 
 function fn_reReply(rno){
@@ -329,7 +329,7 @@ function fn_reReply(rno){
 	                            }
 	                    	
 	                    	html += data[i].comment_writer
-	                    	html += '<a href="javascript:void(0)" onclick="fn_reReply(' +data[i].rno+ ')">답글</a></td>';
+	                    	html += '<a href="javascript:void(0)" onclick="fn_reReply(' +data[i].rno+ ')">댓글</a></td>';
 	                    	html += "<td width=\"400\" align=\"left\">"+data[i].comment_content + "</td>";
 	                    	html += "<td align=\"center\">"+data[i].comment_regdate + "</td>";
 		                    html += "<td align=\"center\">"
@@ -343,7 +343,7 @@ function fn_reReply(rno){
 	                    }else{
 	                    	
 	                    		                    	
-	                    	html += "<div><table class='table'><tr><td width=\"220\">"+data[i].comment_writer+'<a href="javascript:void(0)" onclick="fn_reReply(' +data[i].rno+ ')">답글</a></td>';
+	                    	html += "<div><table class='table'><tr><td width=\"220\">"+data[i].comment_writer+'<a href="javascript:void(0)" onclick="fn_reReply(' +data[i].rno+ ')">댓글</a></td>';
 	                    	html += "<td width=\"400\" align=\"left\">"+data[i].comment_content + "</td>";
 	                    	html += "<td align=\"center\">"+data[i].comment_regdate + "</td>";
 		                    html += "<td align=\"center\">"
