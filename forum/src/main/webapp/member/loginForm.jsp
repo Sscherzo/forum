@@ -17,6 +17,7 @@
 </script>
 </head>
 <body>
+<h2>로그인</h2>
 	<form action="<%= request.getContextPath() %>/member/login" name="loginForm" method="post">
 		<table border="1">
 			<tr>

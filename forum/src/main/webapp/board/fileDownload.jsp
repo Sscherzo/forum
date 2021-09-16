@@ -29,8 +29,7 @@
     	//파일출력
     	//기존 jsp의 내장객체 out의 buffer를 비우고 , 출력해야, 예외 발생이 안생김
     	out.clear();
-    	out = pageContext.pushBody();
-    	
+    	out = pageContext.pushBody();    	
     	
     	FileInputStream fis = new FileInputStream(file);
     	BufferedInputStream bis = new BufferedInputStream(fis);

@@ -7,6 +7,8 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
 import java.util.Map;
+
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -42,15 +44,16 @@ public class BoardController {
 	@Autowired
 	private CommentService commentService;
 	//-- 파일이 저장되거나 업로드 되는 경로	
-	String realFolder = "C:/Users/seok/Desktop/warehouse";
+	String realFolder =  "C:/Users/seok/Desktop/warehouse";
 	
 	//-- 게시글 
 	@RequestMapping(value = "/boardList")
-	public String boardList(Model model,HttpServletRequest request) throws Exception {
+	public String boardList(Model model,HttpServletRequest request) throws Exception {		
+	
 		// 데이터		
 		int pg = 0;
 		int totalA = 0;
-		List<BoardDTO> list = null;
+		List<BoardDTO> list = null;		
 		
 		if(request.getParameter("pg") == null) {
 			pg = 1;
@@ -70,10 +73,10 @@ public class BoardController {
 		if(search != null && search != "") {
 			list = boardService.searchList(search, startNum, endNum);
 			totalA = boardService.getTotalB(search);  // 검색된  총 글수
-			model.addAttribute("search", search);
+			model.addAttribute("search", search);			
 		}else {
 			list = boardService.boardList(startNum, endNum);
-			totalA = boardService.getTotalA();  // 총 글수
+			totalA = boardService.getTotalA();  // 총 글수			
 		}		
 		 		
 		// 2. 페이징 처리
@@ -83,6 +86,8 @@ public class BoardController {
 		int startPage = (pg-1)/3*3 + 1;			// 시작 페이지
 		int endPage = startPage + 2;			// 끝 페이지
 		if(endPage > totalP) endPage = totalP;  // 총 페이지 보다 많을 경우
+		
+		System.out.println("TEST");
 		
 		// 3. 댓글 처리		
 		for(int i=0;i<list.size();i++) {

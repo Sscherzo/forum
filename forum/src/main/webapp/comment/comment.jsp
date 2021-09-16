@@ -66,7 +66,7 @@ $(document).ready(function(){
 
 
 /*
- * 댓글 등록하기(Ajax)
+ * 댓글 등록하기
  */
 function fn_comment(){	
     
@@ -93,6 +93,11 @@ function fn_comment(){
     
 	
 }
+
+/*
+ * 댓글 삭제하기
+ */
+
 function fn_deleteReply(rno){		 
 	
     $.ajax({
@@ -116,6 +121,10 @@ function fn_deleteReply(rno){
         
     });
 }
+
+/*
+ * 댓글 수정하기
+ */
 
 function fn_editReplyComplete(rno){	
 	
@@ -149,6 +158,10 @@ function fn_editReplyComplete(rno){
     });
 	
 }
+
+/*
+ * 댓글 수정화면 보여 주기
+ */
 
 function fn_editReply(rno){
 		
@@ -211,8 +224,8 @@ function fn_editReply(rno){
 
 
  
-/**
- * 댓글 불러오기(Ajax)
+/*
+ *  댓글 불러오기
  */
 function getCommentList(){	
 	
@@ -279,6 +292,9 @@ function getCommentList(){
     });
 }
 
+/*
+ *   '답글'을 눌렀을 때 대댓글을 적을수 있는 textarea가 나오고 depth를 '->'로 표현
+ */
 
 function fn_reReply(rno){
 	
@@ -379,15 +395,13 @@ function fn_reReply(rno){
  
 }
 
+ /*
+  *  '답변완료'를 눌렀을 때
+  */
 
+ function fn_ReplyComplete(rno){		 
 
- function fn_ReplyComplete(rno){
-	 
-	 
-		 
-
-		var replyEditContent = $('#editContent').val();	
-		
+		var replyEditContent = $('#editContent').val();		
 		
 		$.ajax({
 	        type:'POST',

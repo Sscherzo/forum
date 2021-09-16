@@ -47,7 +47,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				 to_char(logtime, 'YYYY.MM.DD')as logtime from 
 				 (select rownum  rn, tt.* from 
 				 (select * from board where board.content like '%'||UPPER(#{search})||'%'
-                 or board.subject like '%'||UPPER(#{search})||'%'   order by seq desc) tt) 
+				 or board.content like '%'||#{search}||'%'
+                 or board.subject like '%'||UPPER(#{search})||'%'
+                 or board.subject like '%'||#{search}||'%'
+                 order by seq desc) tt) 
 				 where rn>=#{startNum} and rn<=#{endNum}]]>
 	</select>
 	<!-- 상세보기 : select 
@@ -63,7 +66,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- 총 목록 수 구하기 : select -->
 	<select id="getTotalB" parameterType="java.util.Map" resultType="int">
 		select count(*) as cnt from board where board.content like '%'||UPPER(#{search})||'%'
-                 or board.subject like '%'||UPPER(#{search})||'%'
+				or board.content like '%'||#{search}||'%'
+                or board.subject like '%'||UPPER(#{search})||'%'
+                or board.subject like '%'||#{search}||'%'
+                 
 	</select>
 	
 </mapper>
