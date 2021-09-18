@@ -410,8 +410,7 @@ function fn_reReply(rno){
 	        	  comment_content : replyEditContent},
 	        success : function(data){
 	            if(data=="success")
-	            {                	
-	            	alert("성공");
+	            {               	
 	            	getCommentList();
 	               
 	            }else if(data == "fail"){

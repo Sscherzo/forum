@@ -124,38 +124,14 @@ public class CommentController {
 	@RequestMapping(value = "/commentList",produces = "application/text; charset=UTF-8")
 	public ResponseEntity<Object> commentList(Model model,HttpServletRequest request,HttpServletResponse response) throws Exception {
 		
-		HttpHeaders responseHeaders = new HttpHeaders();
-		ArrayList<HashMap<String,Object>> hmlist = new ArrayList<HashMap<String,Object>>();
+		HttpHeaders responseHeaders = new HttpHeaders();		
 		
 		int seq =  Integer.parseInt(request.getParameter("seq"));		
 		
 		//-- 게시글 번호에 맞는 댓글들을 가져온다
 		List<CommentDTO> commentList = commentService.commentList(seq);		
-		
-		//-- commentList를 사용해서도 댓글은 넘길 수 있다.날짜 변환한 값을 다시 parse하면 원래 값으로 돌아왔기 때문에 
-		//-- hashmap을 사용하여 넘겨주었다
-		if(commentList.size()>0) {
-			for(int i=0;i<commentList.size();i++) {
 				
-			    SimpleDateFormat tranSimpleFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH);
-			    String strDate = null;
-			    strDate = tranSimpleFormat.format(commentList.get(i).getComment_regdate());		        
-		       
-			    HashMap<String,Object> hm = new HashMap<String,Object>();
-				hm.put("bno",seq);
-				hm.put("rno",commentList.get(i).getRno());
-				hm.put("comment_content",commentList.get(i).getComment_content());
-				hm.put("comment_writer",commentList.get(i).getComment_writer());				
-				hm.put("comment_regdate",strDate);
-				hm.put("comment_depth",commentList.get(i).getComment_depth());
-				hm.put("comment_group",commentList.get(i).getComment_group());
-				hm.put("comment_order",commentList.get(i).getComment_order());					
-
-				hmlist.add(hm);
-			}
-		}		
-				
-		JSONArray json = new JSONArray(hmlist);	
+		JSONArray json = new JSONArray(commentList);	
 								
 		return new ResponseEntity<Object>(json.toString(),responseHeaders,HttpStatus.CREATED);
 	}

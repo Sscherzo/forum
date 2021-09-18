@@ -9,4 +9,6 @@ public interface MemberService {
 	public int insertMember(MemberDTO memberDTO);
 	//-- 아이디 중복 체크 : select
 	public int idCheckMember(MemberDTO memberDTO);
+	//-- salt값 가져오기 : select
+	public String bringSalt(String id);
 }

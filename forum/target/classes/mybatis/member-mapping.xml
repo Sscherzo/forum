@@ -8,12 +8,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<insert id="insertMember" parameterType="memberDTO">
-		insert into member values (#{id},#{pw})
+		insert into member values (#{id},#{pw},#{salt})
 	</insert>
 	
 	<select id="idCheckMember" parameterType="memberDTO" resultType="int">
 		select count(*) from member where id=#{id}
 	</select>
+	
+	<select id="bringSalt" parameterType="memberDTO" resultType="string">
+		select salt from member where id=#{id}
+	</select>
+	
 	
 	
 </mapper>

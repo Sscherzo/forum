@@ -25,6 +25,10 @@ public class MemberDAO {
 	//아이디 중복 체크
 	public int idCheckMember(MemberDTO memberDTO) {
 	  	return sqlSession.selectOne("mybatis.memberMapper.idCheckMember",memberDTO);
+	}	
+	//salt 가져오기
+	public String bringSalt(String id) {
+		return sqlSession.selectOne("mybatis.memberMapper.bringSalt",id);
 	}
 	
 	

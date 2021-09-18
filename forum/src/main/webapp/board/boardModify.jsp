@@ -53,9 +53,10 @@
 </script>
 
 
-<title>글보기</title>
+<title>글 수정</title>
 </head>
 <body>
+<h2>게시글 수정</h2>
 <form action="<%= request.getContextPath() %>/board/temporaryBoardModify" method="post" enctype="multipart/form-data">
 	<table border="1">
 		<tr>

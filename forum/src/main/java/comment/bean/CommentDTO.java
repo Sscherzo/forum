@@ -10,9 +10,9 @@ public class CommentDTO {
 	private int bno;					//--게시물 번호
 	private String comment_writer;  	//--댓글 내용
 	private String comment_content; 	//--댓글 작성자
-	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
+	//@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
 	//Json 사용시 Date는 JsonFormat을 사용
-	private Date comment_regdate;  		 //--댓글 작성 날짜	
+	private String comment_regdate;  		 //--댓글 작성 날짜	
 	private int comment_group;  		//-- 그룹
 	private int comment_depth;  		//-- 깊이
 	private int comment_order;  		//-- 댓글 정렬
@@ -61,11 +61,12 @@ public class CommentDTO {
 	public void setComment_content(String comment_content) {
 		this.comment_content = comment_content;
 	}
-	public Date getComment_regdate() {
+	public String getComment_regdate() {
 		return comment_regdate;
 	}
-	public void setComment_regdate(Date comment_regdate) {
+	public void setComment_regdate(String comment_regdate) {
 		this.comment_regdate = comment_regdate;
 	}
+	
 
 }

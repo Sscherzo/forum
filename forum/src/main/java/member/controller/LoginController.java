@@ -3,6 +3,11 @@ package member.controller;
 import java.io.IOException;
 
 import java.io.PrintWriter;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
+import java.util.Base64;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -34,7 +39,15 @@ public class LoginController implements WebMvcConfigurer{
 	
     //-- 멤버 로그인
 	@RequestMapping(value = "/login")
-	public String login(Model model,MemberDTO memberDTO){
+	public String login(Model model,MemberDTO memberDTO) throws NoSuchAlgorithmException{
+		
+		//-- 아이디로 salt를 가져오고 패스워드를 변환
+		String salt = memberService.bringSalt(memberDTO.getId());
+		MessageDigest md = MessageDigest.getInstance("SHA-256");
+		md.update(salt.getBytes());
+		md.update(memberDTO.getPw().getBytes());
+		String hex = String.format("%064x", new BigInteger(1, md.digest()));
+		memberDTO.setPw(hex);
 		
 		//-- 회원이 등록 되어있는지 Member Table에서 확인
 		int result = memberService.loginMember(memberDTO);
@@ -57,7 +70,7 @@ public class LoginController implements WebMvcConfigurer{
 		
 	//-- 회원 등록
 	@RequestMapping(value = "/signUp")
-	public String signUp(Model model,HttpServletResponse response,MemberDTO memberDTO) throws IOException {
+	public String signUp(Model model,HttpServletResponse response,MemberDTO memberDTO) throws IOException, NoSuchAlgorithmException {
 		
 		//-- 아이디 체크		
 		int loginCheckResult = memberService.idCheckMember(memberDTO);
@@ -79,7 +92,19 @@ public class LoginController implements WebMvcConfigurer{
 		out.println("<script>alert('회원 등록 되었습니다..'); </script>");
 		out.flush();	
 		
+		SecureRandom random = SecureRandom.getInstance("SHA1PRNG");
+		byte[] bytes = new byte[16];
+		random.nextBytes(bytes);
+		String salt = new String(Base64.getEncoder().encode(bytes));
+
+		MessageDigest md = MessageDigest.getInstance("SHA-256");
+		md.update(salt.getBytes());
+		md.update(memberDTO.getPw().getBytes());
+		String hex = String.format("%064x", new BigInteger(1, md.digest()));
+		
 		//-- Member Table에 회원 데이터 기록
+		memberDTO.setPw(hex);
+		memberDTO.setSalt(salt);		
 		int result = memberService.insertMember(memberDTO);
 		
 		//-- 데이터 공유 + view 처리

@@ -13,7 +13,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		
 		<select id="commentList" resultType="commentDTO" parameterType="commentDTO">
 				
-				select rno,comment_content,comment_writer,comment_regdate,comment_depth,comment_order,comment_group from board_comment
+				select rno,comment_content,comment_writer,TO_CHAR(comment_regdate,'yyyy-mm-dd hh24:mm:ss')as comment_regdate,comment_depth,comment_order,comment_group from board_comment
 				  where bno=#{bno} order by comment_group desc,comment_order asc		  	
 				
 		</select>

@@ -31,5 +31,11 @@ public class MemberServiceImpl implements MemberService{
 		// TODO Auto-generated method stub
 		return dao.idCheckMember(memberDTO);
 	}
+	@Override
+	public String bringSalt(String id) {
+		// TODO Auto-generated method stub
+		return dao.bringSalt(id);
+	}
+	
 
 }

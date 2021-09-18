@@ -85,9 +85,7 @@ public class BoardController {
 		int totalP = (totalA + 4) / 5; 			// 총 페이지 수
 		int startPage = (pg-1)/3*3 + 1;			// 시작 페이지
 		int endPage = startPage + 2;			// 끝 페이지
-		if(endPage > totalP) endPage = totalP;  // 총 페이지 보다 많을 경우
-		
-		System.out.println("TEST");
+		if(endPage > totalP) endPage = totalP;  // 총 페이지 보다 많을 경우		
 		
 		// 3. 댓글 처리		
 		for(int i=0;i<list.size();i++) {
