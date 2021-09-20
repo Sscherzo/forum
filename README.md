@@ -1,5 +1,3 @@
 # forum
 
-:smile:
-
 
