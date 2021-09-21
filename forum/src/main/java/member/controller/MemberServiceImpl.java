@@ -9,33 +9,36 @@ import member.dao.MemberDAO;
 
 
 @Component
-public class MemberServiceImpl implements MemberService{
-	
-	@Autowired
-	private MemberDAO dao;	
-	
-	//멤버 로그인
-	public int loginMember(MemberDTO memberDTO){
-		// TODO Auto-generated method stub
-		return dao.loginMember(memberDTO);
-	}
-	//멤버 가입
-	@Override
-	public int insertMember(MemberDTO memberDTO) {
-		// TODO Auto-generated method stub
-		return dao.insertMember(memberDTO);
-	}
-	//아이디 중복 체크
-	@Override
-	public int idCheckMember(MemberDTO memberDTO) {
-		// TODO Auto-generated method stub
-		return dao.idCheckMember(memberDTO);
-	}
-	@Override
-	public String bringSalt(String id) {
-		// TODO Auto-generated method stub
-		return dao.bringSalt(id);
-	}
-	
+public class MemberServiceImpl implements MemberService {
+
+  @Autowired
+  private MemberDAO dao;
+
+  // 멤버 로그인
+  public int loginMember(MemberDTO memberDTO) {
+    // TODO Auto-generated method stub
+    return dao.loginMember(memberDTO);
+  }
+
+  // 멤버 가입
+  @Override
+  public int insertMember(MemberDTO memberDTO) {
+    // TODO Auto-generated method stub
+    return dao.insertMember(memberDTO);
+  }
+
+  // 아이디 중복 체크
+  @Override
+  public int idCheckMember(MemberDTO memberDTO) {
+    // TODO Auto-generated method stub
+    return dao.idCheckMember(memberDTO);
+  }
+
+  @Override
+  public String bringSalt(String id) {
+    // TODO Auto-generated method stub
+    return dao.bringSalt(id);
+  }
+
 
 }

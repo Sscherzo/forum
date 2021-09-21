@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +17,8 @@
 </script>
 </head>
 <body>
-	<form action="<%= request.getContextPath() %>/board/boardWrite" method="post" name="boardWriteForm" enctype="multipart/form-data">
+	<form action="<%=request.getContextPath()%>/board/boardWrite"
+		method="post" name="boardWriteForm" enctype="multipart/form-data">
 		<table border="1">
 			<tr>
 				<th width="50">제목</th>
@@ -25,19 +26,17 @@
 			</tr>
 			<tr>
 				<th>내용</th>
-				<td><textarea rows="15" cols="45" name="content" ></textarea></td>
+				<td><textarea rows="15" cols="45" name="content"></textarea></td>
 			</tr>
-			<tr>				
-				<td colspan="2" align="center">
-					<input type="button" value="글쓰기" onclick="checkBoardWrite()">
-					<input type="reset" value="다시 작성">
-					<input type="file" name="upload1">
-				</td>
+			<tr>
+				<td colspan="2" align="center"><input type="button" value="글쓰기"
+					onclick="checkBoardWrite()"> <input type="reset"
+					value="다시 작성"> <input type="file" name="upload1"></td>
 			</tr>
 		</table>
 	</form>
 	<a href="boardList">게시판으로</a>
-	
+
 </body>
 </html>
 

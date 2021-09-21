@@ -74,15 +74,6 @@ public class BoardDAO {
 	}
 	
 	
-}
-
-
-
-
-
-
-
-
-
+  }
 
 
