@@ -129,7 +129,7 @@ Salt를 사용하면 랜덤으로 문자가 결정되기 때문에 랜덤한 문
 ![캡처](https://user-images.githubusercontent.com/90139096/134353023-2fb31edc-b5ce-43ba-9084-6a590c32454d.PNG)
 
 로그인을 한 뒤 글쓰기가 가능합니다. 제목과 내용을 입력하지 않을 시
-`alert`를 통해 경고하며 파일 선택을 눌러 원하는 파일을  업로드 할
+`alert`를 통해 경고하며 파일 선택을 눌러   원하는 파일을  업로드 할
 수 있습니다.  
 
 파일 업로드는 `MultipartRequest`를 사용했습니다. `MultipartRequest`를 사용하기 위해서는 *cos.jar*가 필요합니다.
