@@ -103,4 +103,15 @@ Salt를 사용하면 랜덤으로 문자가 결정되기 때문에 랜덤한 문
 같은 패스워드를 입력해도   다른 문자열이 저장되고 DB를 보아도 패스워드를 알 수 없습니다.
 
 [:arrow_up_small: 기능 소개](#feature-introduction)
+
+2. 로그인 기능
+
+![캡처](https://user-images.githubusercontent.com/90139096/134345885-808a433a-6c15-42ad-a1fc-a2b82cc255dc.PNG)
+
+회원 가입한 아이디와 비밀번호로 로그인이 가능합니다.  
+로그인할 때는 회원 가입 때 사용됬던 Salt값을 가져와 해싱된 값과 비교합니다.
+
+![캡처](https://user-images.githubusercontent.com/90139096/134346568-1f724ac0-7c94-4c2d-aef0-97adcc13eb40.PNG)
+
+[:arrow_up_small: 기능 소개](#feature-introduction)
  
