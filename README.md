@@ -84,7 +84,7 @@ JSP를 직접 실행하면 Controller에 연결이 안되므로 BoardListStart�
 
 # Feature Introduction
 
-1. 회원가입 기능
+**1. 회원가입 기능**
  
 ![1](https://user-images.githubusercontent.com/90139096/134343007-43f7cb89-3b82-401a-821c-ce673085fbf2.PNG)
 
@@ -104,7 +104,7 @@ Salt를 사용하면 랜덤으로 문자가 결정되기 때문에 랜덤한 문
 
 [:arrow_up_small: 기능 소개](#feature-introduction)
 
-2. 로그인 기능
+**2. 로그인 기능**
 
 ![캡처](https://user-images.githubusercontent.com/90139096/134345885-808a433a-6c15-42ad-a1fc-a2b82cc255dc.PNG)
 
