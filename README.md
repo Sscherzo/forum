@@ -136,7 +136,6 @@ Salt를 사용하면 랜덤으로 문자가 결정되기 때문에 랜덤한 문
 
 ```
 MultipartRequest multi = new MultipartRequest(request,저장 경로,파일 크기,인코딩,new DefaultFileRenamePolicy());  
-DefaultFileRenamePolicy()를 사용하면 파일 이름뒤에 1을 붙여  
-파일 이름의 중복을 피할 수 있습니다.
+DefaultFileRenamePolicy()를 사용하면 파일 이름뒤에 1을 붙여 파일 이름의 중복을 피할 수 있습니다.
 ```
 [:arrow_up_small: 기능 소개](#feature-introduction)
