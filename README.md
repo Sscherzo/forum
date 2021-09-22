@@ -109,9 +109,17 @@ Salt를 사용하면 랜덤으로 문자가 결정되기 때문에 랜덤한 문
 ![캡처](https://user-images.githubusercontent.com/90139096/134345885-808a433a-6c15-42ad-a1fc-a2b82cc255dc.PNG)
 
 회원 가입한 아이디와 비밀번호로 로그인이 가능합니다.  
-로그인할 때는 회원가입 때 사용던 Salt값을 가져와 해싱된 값과 비교합니다.
+로그인할 때는 회원 가입 때 사용됬던 Salt값을 가져와 해싱된 값과 비교합니다.
 
 ![캡처](https://user-images.githubusercontent.com/90139096/134346568-1f724ac0-7c94-4c2d-aef0-97adcc13eb40.PNG)
 
+로그인을 하게되면 로그인 링크가 로그 아웃으로 변합니다.  
+'로그 아웃'을 누름으로써 로그아웃됩니다.   
+로그인 기능은 Session을 사용하여 만들었습니다.
+
+```java
+   @SessionAttributes를 이용해서 로그인 유지
+   sessionStatus.setComplete(); 이용해서 세션을 제거
+```
+
 [:arrow_up_small: 기능 소개](#feature-introduction)
- 
