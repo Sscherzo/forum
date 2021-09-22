@@ -91,7 +91,7 @@ JSP를 직접 실행하면 Controller에 연결이 안되므로 BoardListStart�
 회원가입 기능은 아이디와 비밀번호만 입력하고 등록되게 만들었습니다.
 아이디나 비밀번호를 입력하지 않을시 `alert` 이용해 경고합니다.
 
-패스워드는 SHA256을 통해 암호화 하고 RainbowTabl 이용을 막기 위해
+패스워드는 SHA256을 통해 암호화 하고 Rainbow Table 이용을 막기 위해
 Salt를 사용했습니다.
 
 ```java
@@ -99,7 +99,8 @@ Salt를 사용했습니다.
    SecureRandom random = SecureRandom.getInstance("SHA1PRNG");
 ```
 
-랜덤으로 salt 문자가 결정되기 때문에 같은 패스워드를 입력해도 다른 문자열이 저장되고 DB를 보아도 패스워드를 알 수 없습니다.
+Salt를 사용하면 랜덤으로 문자가 결정되기 때문에 랜덤한 문자열과 사용자가 입력한 패스워드를 해싱하면
+같은 패스워드를 입력해도 다른 문자열이 저장되고 DB를 보아도 패스워드를 알 수 없습니다.
 
 [:arrow_up_small: 기능 소개](#feature-introduction)
  
