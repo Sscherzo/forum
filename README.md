@@ -8,8 +8,8 @@
 4.[Version](#version)  
 5.[Features of the project](#features-of-the-project)  
 6.[Simple Diagram](#simple-diagram)   
-3.[동기](#동기)    
-4.[동기](#동기)
+7.[Feature Introduction](#feature-introduction)     
+
 
 # Motivation
 
@@ -81,4 +81,25 @@ JSP를 직접 실행하면 Controller에 연결이 안되므로 BoardListStart�
 통해 DB와 연결되어 SQL을 사용하여 값을 가져오고 값을 받은 Controller는 용도에 맞게 데이터를 가공해 그 데이터를 View를 통해 보여주게 됩니다. 
 
 [:arrow_up: 목차로](#contents)
+
+# Feature Introduction
+
+1. 회원가입 기능
+ 
+![1](https://user-images.githubusercontent.com/90139096/134343007-43f7cb89-3b82-401a-821c-ce673085fbf2.PNG)
+
+회원가입 기능은 아이디와 비밀번호만 입력하고 등록되게 만들었습니다.
+아이디나 비밀번호를 입력하지 않을시 `alert` 이용해 경고합니다.
+
+패스워드는 SHA256을 통해 암호화 하고 RainbowTabl 이용을 막기 위해
+Salt를 사용했습니다.
+
+```java
+   MessageDigest md = MessageDigest.getInstance("SHA-256");
+   SecureRandom random = SecureRandom.getInstance("SHA1PRNG");
+```
+
+랜덤으로 salt 문자가 결정되기 때문에 같은 패스워드를 입력해도 다른 문자열이 저장되고 DB를 보아도 패스워드를 알 수 없습니다.
+
+[:arrow_up_small:](#feature-introduction)
  
