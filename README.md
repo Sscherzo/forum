@@ -141,7 +141,7 @@ DefaultFileRenamePolicy()를 사용하면 파일 이름뒤에 1을 붙여 파일
 ```
 [:arrow_up_small: 기능 소개](#feature-introduction)
 
-**4. 글 삭제 & 글 수정 **
+**4. 글 삭제 & 글 수정**
 
 ![캡처](https://user-images.githubusercontent.com/90139096/134474403-f93a6f0a-bf4f-4b5a-967d-fb5e25f8892e.PNG)
 
