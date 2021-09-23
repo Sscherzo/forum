@@ -84,8 +84,8 @@ JSP를 직접 실행하면 Controller에 연결이 안되므로 BoardListStart�
 
 # Feature Introduction
    - [회원 가입](#회원-가입)
-   - [로그인 기능](#로그인)
-   - [글쓰기 기능](#글쓰기)
+   - [로그인](#로그인)
+   - [글쓰기](#글쓰기)
    - [글 삭제와 글 수정](#글-삭제와-글-수정)
 
    [:arrow_up: 목차로](#contents)
