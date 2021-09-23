@@ -4,8 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import board.bean.BoardDTO;
 import comment.bean.CommentDTO;
 import comment.dao.CommentDAO;
 

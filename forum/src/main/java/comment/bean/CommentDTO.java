@@ -1,17 +1,11 @@
 package comment.bean;
 
-import java.util.Date;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 public class CommentDTO {
 
   private int rno; // --댓글 번호
   private int bno; // --게시물 번호
   private String comment_writer; // --댓글 내용
   private String comment_content; // --댓글 작성자
-  // @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
-  // Json 사용시 Date는 JsonFormat을 사용
   private String comment_regdate; // --댓글 작성 날짜
   private int comment_group; // -- 그룹
   private int comment_depth; // -- 깊이

@@ -1,8 +1,6 @@
 package comment.controller;
 
 import java.util.List;
-
-import board.bean.BoardDTO;
 import comment.bean.CommentDTO;
 
 public interface CommentService {
