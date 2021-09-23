@@ -236,3 +236,28 @@ View에서는 시작페이지가 보여줄 하단 페이지 링크수 보다 크
 
 
 [:arrow_up_small: 기능 소개](#feature-introduction)
+
+# 댓글
+
+![캡처](https://user-images.githubusercontent.com/90139096/134527005-d0baa0ad-538c-40ed-802f-aeced65a9b46.PNG)
+
+댓글은 페이지 이동없이 하기 위해서 *Ajax*를 사용했습니다.  
+```js
+
+$.ajax({
+        type:'POST',  // 전송 방식
+        url : "<c:url value='/comment/commentList'/>", // 전송페이지
+        dataType : "json", //요청한 데이터 형식
+        data:$("#commentForm").serialize(), // 전송할 데이터,쿼리 스트링 형식의 데이터 변환
+        contentType: "application/x-www-form-urlencoded;charset=UTF-8", //Content-type 설정
+        success : function(data){ // 전송에 성공했을 때
+
+```
+Ajax를 컨트롤러가 사용하기 위해서 `@RestController`를 사용하였습니다.
+댓글은 삽입,삭제,수정이 가능하며 대댓글의 경우 깊이에 따른 들여쓰기를 해주었습니다. 댓글이 입력되면 Comments 옆에 댓글 수가 표시되며 글 제목에서도 코멘트 수를 확인 할 수 있습니다.
+
+![캡처](https://user-images.githubusercontent.com/90139096/134531325-f2dd5e80-35b5-4c06-b1f6-f1c3ab8a8adc.PNG)
+
+![캡처](https://user-images.githubusercontent.com/90139096/134531174-b838b26a-c399-469e-8727-7b5c6aa33124.PNG)
+
+[:arrow_up_small: 기능 소개](#feature-introduction)
