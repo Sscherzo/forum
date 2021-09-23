@@ -208,3 +208,17 @@ View에서는 시작페이지가 보여줄 하단 페이지 링크수 보다 크
 (끝 페이지 + 1) 값을 페이지에 돌려줍니다.
 
 [:arrow_up_small: 기능 소개](#feature-introduction)
+
+# 검색
+
+![캡처](https://user-images.githubusercontent.com/90139096/134514378-1772ae54-cea6-4b1b-b6a8-3982da96e320.PNG)
+
+검색은 제목과 내용을 한번에 검색합니다.그리고 검색된 갯수에 맞게
+페이징 처리를 해줍니다.  
+  
+검색된 결과가 없다면 다음과 같이 나옵니다.
+
+![캡처](https://user-images.githubusercontent.com/90139096/134515078-71cb434c-53a2-46ee-ae47-225059f93f00.PNG)
+
+
+[:arrow_up_small: 기능 소개](#feature-introduction)
