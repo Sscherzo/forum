@@ -216,6 +216,19 @@ View에서는 시작페이지가 보여줄 하단 페이지 링크수 보다 크
 
 검색은 제목과 내용을 한번에 검색합니다.그리고 검색된 갯수에 맞게
 페이징 처리를 해줍니다.  
+
+```java
+// => 검색된 값이 있을 때와 없을 때 (search(검색값))
+    if (search != null && search != "") {   
+      list = boardService.searchList(search, startNum, endNum);
+      totalA = boardService.getTotalB(search); // 검색된 총 글수
+      model.addAttribute("search", search);    
+    } else {
+      list = boardService.boardList(startNum, endNum);
+      totalA = boardService.getTotalA(); // 총 글수     
+    }
+
+```
   
 검색된 결과가 없다면 다음과 같이 나옵니다.
 
