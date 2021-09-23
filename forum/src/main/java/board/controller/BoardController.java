@@ -159,7 +159,7 @@ public class BoardController {
     boardDTO.setSeq(seq);
     boardDTO.setContent(content);
 
-    // --게시글에 파일이 미 등록일 경우
+    // -- 게시글에 파일이 미 등록일 경우
     if (fileName1 != null && fileName == null) {
       boardDTO.setFileName(fileName1);
       boardDTO.setOriginal_fileName(original_fileName1);
