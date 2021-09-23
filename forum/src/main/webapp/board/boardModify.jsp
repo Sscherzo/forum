@@ -97,18 +97,22 @@ textarea:focus {
 				</td>
 			</tr>
 		</table>
-		<input type="hidden" name="seq" value="${boardDTO.seq}"> <input
+		
+		<input 
+			type="hidden" name="seq" value="${boardDTO.seq}">
+		<input
 			type="hidden" id="fileName" name="fileName"
-			value="${boardDTO.fileName}"> <input type="hidden"
+			value="${boardDTO.fileName}"> 
+		<input type="hidden"
 			id="original_fileName" name="original_fileName"
-			value="${boardDTO.original_fileName}"> <input type="button"
-			value="목록" onclick="location.href='boardList?pg=${pg}'"> <input
+			value="${boardDTO.original_fileName}"> 
+		<input type="button"
+			value="목록" onclick="location.href='boardList?pg=${pg}'"> 
+		<input
 			type="submit" value="수정완료"> <input type="button"
-			value="파일 삭제" onclick="deletefile('${boardDTO.fileName}')"> <input
+			value="파일 삭제" onclick="deletefile('${boardDTO.fileName}')"> 
+		<input
 			type="file" name="upload1">
-
-
-
 	</form>
 
 </body>

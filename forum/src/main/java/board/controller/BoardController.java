@@ -61,12 +61,12 @@ public class BoardController {
       pg = Integer.parseInt(request.getParameter("pg"));
     }
 
-    /* DB */
+
     // 1. 목록 가져오기
     // => 1페이지당 5개씩
     int endNum = pg * 5;
     int startNum = endNum - 4;
-    // BoardDAO boardDAO = new BoardDAO();
+    
     String search = request.getParameter("search");
 
     // => 검색된 값이 있을 때와 없을 때
@@ -224,12 +224,8 @@ public class BoardController {
   @RequestMapping(value = "/boardViewUpdate")
   public String boardViewUpdate(Model model, HttpSession session) {
 
-    int seq = (Integer) session.getAttribute("seq");
-
-    // DB
-    BoardDTO boardDTO = boardService.boardView(seq);
-
-    // 화면 네비게이션
+    int seq = (Integer) session.getAttribute("seq");    
+    BoardDTO boardDTO = boardService.boardView(seq);    
     model.addAttribute("seq", seq);
     model.addAttribute("boardDTO", boardDTO);
 
@@ -241,14 +237,12 @@ public class BoardController {
   @RequestMapping(value = "/boardView")
   public String boardView(Model model, @RequestParam("seq") int seq) {
 
-    // DB
+
     boardService.updateHit(seq); // 조회수 증가
     BoardDTO boardDTO = boardService.boardView(seq);
-
-    // 화면 네비게이션
+   
     model.addAttribute("seq", seq);
     model.addAttribute("boardDTO", boardDTO);
-
 
     return "boardView.jsp";
   }

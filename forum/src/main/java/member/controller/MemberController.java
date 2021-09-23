@@ -32,7 +32,7 @@ import member.dao.MemberDAO;
 @Controller
 @RequestMapping(value = "/member") // 중복되는 경로
 @SessionAttributes({"id", "pg"}) // 세션값
-public class LoginController implements WebMvcConfigurer {
+public class MemberController implements WebMvcConfigurer {
 
   @Autowired
   private MemberService memberService;
@@ -116,7 +116,7 @@ public class LoginController implements WebMvcConfigurer {
 
   }
 
-  /// -- 단순 페이지 전환
+  // -- 단순 페이지 전환
 
   @RequestMapping(value = "/loginForm")
   public String loginForm() {

@@ -20,7 +20,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		hh24:mm:ss')as
 		comment_regdate,comment_depth,comment_order,comment_group from
 		board_comment
-		where bno=#{bno} order by comment_group desc,comment_order asc
+		where bno=#{bno} order by comment_group
+		desc,comment_order asc
 
 	</select>
 
@@ -30,22 +31,26 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 
 	<select id="maxRno" resultType="int">
-		select max(rno) from board_comment
+		select max(rno) from
+		board_comment
 	</select>
 
 	<select id="maxOrder" parameterType="commentDTO"
 		resultType="int">
-		select max(comment_order) from board_comment where comment_group =
+		select max(comment_order) from board_comment where
+		comment_group =
 		#{comment_group}
 	</select>
 
 
 	<delete id="commentDelete" parameterType="int">
-		delete board_comment where rno=#{rno}
+		delete board_comment
+		where rno=#{rno}
 	</delete>
 
 	<delete id="commentBnoDelete" parameterType="int">
-		delete board_comment where bno=#{bno}
+		delete board_comment
+		where bno=#{bno}
 	</delete>
 
 	<select id="commentView" parameterType="int"
@@ -54,19 +59,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 
 	<update id="commentModify" parameterType="commentDTO">
-		update board_comment set comment_content=#{comment_content} where rno =
+		update board_comment
+		set comment_content=#{comment_content} where rno =
 		#{rno}
 	</update>
 
 	<update id="commentUpdate" parameterType="commentDTO">
-		update board_comment set
+		update board_comment
+		set
 		comment_group=#{comment_group},comment_depth=#{comment_depth},comment_order=#{comment_order}
 		where rno = #{rno}
 	</update>
 
 	<update id="commentPlusOrder" parameterType="commentDTO">
-		update board_comment set comment_order=comment_order+1 where
-		comment_group=#{comment_group} and comment_order>#{comment_order}
+		update board_comment
+		set comment_order=comment_order+1 where
+		comment_group=#{comment_group}
+		and comment_order>#{comment_order}
 	</update>
 
 

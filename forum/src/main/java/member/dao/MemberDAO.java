@@ -13,23 +13,23 @@ public class MemberDAO {
   @Autowired // rootcontext에서 설정한 mybatis 사용
   private SqlSessionTemplate sqlSession;
 
-  // 멤버 로그인
+  // -- 멤버 로그인
   public int loginMember(MemberDTO memberDTO) {
     return sqlSession.selectOne("mybatis.memberMapper.loginMember", memberDTO);
   }
 
-  // 멤버 가입
+  // -- 멤버 가입
   public int insertMember(MemberDTO memberDTO) {
     // TODO Auto-generated method stub
     return sqlSession.insert("mybatis.memberMapper.insertMember", memberDTO);
   }
 
-  // 아이디 중복 체크
+  // -- 아이디 중복 체크
   public int idCheckMember(MemberDTO memberDTO) {
     return sqlSession.selectOne("mybatis.memberMapper.idCheckMember", memberDTO);
   }
 
-  // salt 가져오기
+  // -- salt 가져오기
   public String bringSalt(String id) {
     return sqlSession.selectOne("mybatis.memberMapper.bringSalt", id);
   }

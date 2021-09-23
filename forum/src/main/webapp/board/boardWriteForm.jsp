@@ -17,6 +17,7 @@
 </script>
 </head>
 <body>
+<h2>글쓰기</h2>
 	<form action="<%=request.getContextPath()%>/board/boardWrite"
 		method="post" name="boardWriteForm" enctype="multipart/form-data">
 		<table border="1">
@@ -29,9 +30,12 @@
 				<td><textarea rows="15" cols="45" name="content"></textarea></td>
 			</tr>
 			<tr>
-				<td colspan="2" align="center"><input type="button" value="글쓰기"
-					onclick="checkBoardWrite()"> <input type="reset"
-					value="다시 작성"> <input type="file" name="upload1"></td>
+				<td colspan="2" align="center">
+				<input type="button" value="작성"
+							onclick="checkBoardWrite()"> 
+				<input type="reset"	value="다시 작성"> 
+				<input type="file" name="upload1">
+				</td>
 			</tr>
 		</table>
 	</form>
