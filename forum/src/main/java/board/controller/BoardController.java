@@ -67,20 +67,20 @@ public class BoardController {
     String search = request.getParameter("search");
 
     // => 검색된 값이 있을 때와 없을 때
-    if (search != null && search != "") {
+    if (search != null && search != "") {   
       list = boardService.searchList(search, startNum, endNum);
       totalA = boardService.getTotalB(search); // 검색된 총 글수
-      model.addAttribute("search", search);
+      model.addAttribute("search", search);    
     } else {
       list = boardService.boardList(startNum, endNum);
-      totalA = boardService.getTotalA(); // 총 글수
+      totalA = boardService.getTotalA(); // 총 글수     
     }
 
     // 2. 페이징 처리
     // => 3블럭
 
     int totalP = (totalA + 4) / 5; // 총 페이지 수
-    int startPage = (pg - 1) / 3 * 3 + 1; // 시작 페이지
+    int startPage = (pg - 1) / 3 * 3 + 1; // 시작 페이지    
     int endPage = startPage + 2; // 끝 페이지
     if (endPage > totalP)
       endPage = totalP; // 총 페이지 보다 많을 경우
@@ -89,7 +89,7 @@ public class BoardController {
     for (int i = 0; i < list.size(); i++) {
       list.get(i).setReply(commentService.getComment(list.get(i).getSeq()));
     }
-
+    
     // 4. 데이터 공유 + view 처리
     model.addAttribute("pg", pg);
     model.addAttribute("list", list);

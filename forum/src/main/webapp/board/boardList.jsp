@@ -47,7 +47,7 @@
 				
 		var search = $('#search').val();	
 		
-		location.href = "boardList?pg="+${requestScope.pg} + "&search=" + search;
+		location.href = "boardList?pg="+${1} + "&search=" + search;
 	}
 </script>
 
