@@ -83,15 +83,21 @@ JSP를 직접 실행하면 Controller에 연결이 안되므로 BoardListStart�
 [:arrow_up: 목차로](#contents)
 
 # Feature Introduction
+   - [회원 가입](#회원-가입)
+   - [로그인 기능](#로그인)
+   - [글쓰기 기능](#글쓰기)
+   - [글 삭제와 글 수정](#글-삭제와-글-수정)
 
-**1. 회원가입 기능**
+   [:arrow_up: 목차로](#contents)
+
+# 회원 가입
  
 ![1](https://user-images.githubusercontent.com/90139096/134343007-43f7cb89-3b82-401a-821c-ce673085fbf2.PNG)
 
 회원가입 기능은 아이디와 비밀번호만 입력하고 등록되게 만들었습니다.
 아이디나 비밀번호를 입력하지 않을시 `alert` 이용해 경고합니다.
 
-패스워드는 SHA256을 통해 암호화 하고 Rainbow Table 이용을 막기 위해
+패스워드는 SHA256을 통해 암호화 하고 RainbowTabl 이용을 막기 위해
 Salt를 사용했습니다.
 
 ```java
@@ -100,11 +106,11 @@ Salt를 사용했습니다.
 ```
 
 Salt를 사용하면 랜덤으로 문자가 결정되기 때문에 랜덤한 문자열과 사용자가 입력한 패스워드를 해싱하면
-같은 패스워드를 입력해도   다른 문자열이 저장되고 DB를 보아도 패스워드를 알 수 없습니다.
+같은 패스워드를 입력해도 다른 문자열이 저장되고 DB를 보아도 패스워드를 알 수 없습니다.
 
 [:arrow_up_small: 기능 소개](#feature-introduction)
 
-**2. 로그인 기능**
+# 로그인
 
 ![캡처](https://user-images.githubusercontent.com/90139096/134345885-808a433a-6c15-42ad-a1fc-a2b82cc255dc.PNG)
 
@@ -124,32 +130,31 @@ Salt를 사용하면 랜덤으로 문자가 결정되기 때문에 랜덤한 문
 
 [:arrow_up_small: 기능 소개](#feature-introduction)
 
-**3. 글쓰기 기능**
+# 글쓰기
 
 ![캡처](https://user-images.githubusercontent.com/90139096/134353023-2fb31edc-b5ce-43ba-9084-6a590c32454d.PNG)
 
 로그인을 한 뒤 글쓰기가 가능합니다. 제목과 내용을 입력하지 않을 시
 `alert`를 통해 경고하며 파일 선택을 눌러  
  원하는 파일을  업로드 할
-수 있습니다. 
+수 있습니다.  
 
 파일 업로드는 `MultipartRequest`를 사용했습니다. `MultipartRequest`를 사용하기 위해서는 *cos.jar*가 필요합니다.
 
 ```
 MultipartRequest multi = new MultipartRequest(request,저장 경로,파일 크기,인코딩,new DefaultFileRenamePolicy());  
-DefaultFileRenamePolicy()를 사용하면 파일 이름뒤에 1을 붙여 파일 이름의 중복을 피할 수 있습니다.
+DefaultFileRenamePolicy()를 사용하면 파일 이름뒤에 1을 붙여  
+파일 이름의 중복을 피할 수 있습니다.
 ```
 [:arrow_up_small: 기능 소개](#feature-introduction)
 
-**4. 글 삭제 & 글 수정**
+ # 글 삭제와 글 수정
 
 ![캡처](https://user-images.githubusercontent.com/90139096/134474403-f93a6f0a-bf4f-4b5a-967d-fb5e25f8892e.PNG)
 
 글 삭제와 글 수정은 로그인된 상태에서 자신이 쓴 글만 삭제 가능합니다.  글 수정은 첨부파일 변경과 글 내용을 변경할 수 있습니다.
-파일 삭제 기능은 *Ajax*를 사용해 페이지 이동 없이 수정 가능하게 만들었습니다.  
-  
+파일 삭제 기능은 Ajax를 사용해 페이지 이동 없이 수정 가능하게 만들었습니다.  
 수정 완료 버튼을 누르면 컨트롤러를 두번 거치게 됩니다. 첫번 째는 파일 처리를 합니다. 파일이 이미 존재하면 삭제하고 업로드를 합니다. 그리고 받은 내용과 파일 이름을 객체에 담아 두 번째로 넘겨주는데 이 때 `RedirectAttributes`를 사용합니다.  한번에 처리가 가능하지만 2번 처리를 해준 이유는 *Bean Validation*을 통해,글 내용에 `@NotBlank`
-를 사용 검증하고 싶었기 때문입니다. 오류가 생기면 `BindingResult`를 통해 에러 메세지를 보여줍니다.
+를 사용해 검증하고 싶었기 때문입니다. 오류가 생기면 `BindingResult`를 통해 에러 메세지를 보여줍니다.
 
 [:arrow_up_small: 기능 소개](#feature-introduction)
-
