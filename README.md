@@ -161,6 +161,27 @@ DefaultFileRenamePolicy()를 사용하면 파일 이름뒤에 1을 붙여
 수정 완료 버튼을 누르면 컨트롤러를 두번 거치게 됩니다. 첫번 째는 파일 처리를 합니다. 파일이 이미 존재하면 삭제하고 업로드를 합니다. 그리고 받은 내용과 파일 이름을 객체에 담아 두 번째로 넘겨주는데 이 때 `RedirectAttributes`를 사용합니다.  한번에 처리가 가능하지만 2번 처리를 해준 이유는 *Bean Validation*을 통해,글 내용에 `@NotBlank`
 를 사용해 검증하고 싶었기 때문입니다. 오류가 생기면 `BindingResult`를 통해 에러 메세지를 보여줍니다.
 
+```
+   // -- temporaryBoardModify에서 넘긴 객체 받기
+    Map<String, ?> flashMap = RequestContextUtils.getInputFlashMap(request);
+
+    if (flashMap != null)
+      boardDTO = (BoardDTO) flashMap.get("boardDTO");
+
+    // -- multipart/form-data로 바로 받을 수 없다
+    // -- BoardDTO에서 사용한 @NotBlank를 검사해서 위반한다면 다시 수정 화면으로 돌아간다
+    if (result.hasErrors()) {
+
+      response.setContentType("text/html; charset=UTF-8");
+      PrintWriter out = response.getWriter();
+      out.println("<script>alert('내용을 입력하십시오.'); </script>");
+      out.flush();
+
+      return "boardModifyView";
+    }
+
+```
+
 [:arrow_up_small: 기능 소개](#feature-introduction)
 
 # 목록 및 페이징
