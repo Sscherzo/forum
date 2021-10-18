@@ -8,7 +8,8 @@
 4.[Version](#version)  
 5.[Features of the project](#features-of-the-project)  
 6.[Simple Diagram](#simple-diagram)   
-7.[Feature Introduction](#feature-introduction)     
+7.[DB TABLE](#db-table)  
+8.[Feature Introduction](#feature-introduction)     
 
 
 # Motivation
@@ -79,6 +80,28 @@ JSP를 직접 실행하면 Controller에 연결이 안되므로 BoardListStart�
 
 게시판에서 실행되는 동작들은 각각의 Controller를 거쳐 Mybatis를 
 통해 DB와 연결되어 SQL을 사용하여 값을 가져오고 값을 받은 Controller는 용도에 맞게 데이터를 가공해 그 데이터를 View를 통해 보여주게 됩니다. 
+
+[:arrow_up: 목차로](#contents)
+
+# DB TABLE
+
+## *Board Table*  
+![1](https://user-images.githubusercontent.com/90139096/137687501-403391aa-7393-450b-b110-0804c9346af6.PNG)
+
+게시판 번호에 일련번호 붙이기  
+- ### create sequence seq_board nocache nocycle;
+- ### seq_board.nextval
+
+
+## *Board_Comment*
+![2](https://user-images.githubusercontent.com/90139096/137688354-9a1d9b4d-6b4b-42c4-a572-8809bff4cac8.PNG)  
+댓글 번호와 댓글 그룹에 일련번호 붙이기  
+- ### create sequence comment_group start with 1 increment by 1 nocache nocycle;
+- ###  create sequence board_comment_seq start with 1 increment by 1 nocache nocycle;
+       
+## *MEMBER*
+
+![3](https://user-images.githubusercontent.com/90139096/137688518-acac5e92-1b61-4242-b49b-a7bbc0dbdb27.PNG)
 
 [:arrow_up: 목차로](#contents)
 
