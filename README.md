@@ -298,7 +298,7 @@ $.ajax({
         success : function(data){ // 전송에 성공했을 때
 
 ```
-Ajax를 컨트롤러가 사용하기 위해서 `@RestController`를 사용하였습니다.
+*Ajax*를 컨트롤러가 사용하기 위해서 `@RestController`를 사용하였습니다.
 댓글은 삽입,삭제,수정이 가능하며 대댓글의 경우 깊이에 따른 들여쓰기를 해주었습니다. 댓글이 입력되면 Comments 옆에 댓글 수가 표시되며 글 제목에서도 코멘트 수를 확인 할 수 있습니다.
 
 ![캡처](https://user-images.githubusercontent.com/90139096/134531325-f2dd5e80-35b5-4c06-b1f6-f1c3ab8a8adc.PNG)
