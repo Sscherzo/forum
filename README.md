@@ -89,15 +89,15 @@ JSP를 직접 실행하면 Controller에 연결이 안되므로 BoardListStart�
 ![1](https://user-images.githubusercontent.com/90139096/137687501-403391aa-7393-450b-b110-0804c9346af6.PNG)
 
 게시판 번호에 일련번호 붙이기  
-- ### create sequence seq_board nocache nocycle;
-- ### seq_board.nextval
+- #### create sequence seq_board nocache nocycle;
+- #### seq_board.nextval
 
 
 ## *Board_Comment*
 ![2](https://user-images.githubusercontent.com/90139096/137688354-9a1d9b4d-6b4b-42c4-a572-8809bff4cac8.PNG)  
 댓글 번호와 댓글 그룹에 일련번호 붙이기  
-- ### create sequence comment_group start with 1 increment by 1 nocache nocycle;
-- ###  create sequence board_comment_seq start with 1 increment by 1 nocache nocycle;
+- #### create sequence comment_group start with 1 increment by 1 nocache nocycle;
+- ####  create sequence board_comment_seq start with 1 increment by 1 nocache nocycle;
        
 ## *MEMBER*
 
