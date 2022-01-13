@@ -286,9 +286,11 @@ public class BoardController {
 
     // -- 파일이 존재하면 삭제
     String fileName = boardService.boardView(seq).getFileName();
-    File file = new File(realFolder, fileName);
-    if (file.exists()) {
-      file.delete();
+    if(fileName != null) {
+      File file = new File(realFolder, fileName);
+      if (file.exists()) {
+        file.delete();
+      }
     }
 
     // -- 댓글 및 게시글 삭제

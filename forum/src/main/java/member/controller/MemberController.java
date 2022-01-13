@@ -30,14 +30,16 @@ public class MemberController implements WebMvcConfigurer {
   // -- 멤버 로그인
   @RequestMapping(value = "/login")
   public String login(Model model, MemberDTO memberDTO) throws NoSuchAlgorithmException {
-
+    
     // -- 아이디로 salt를 가져오고 패스워드를 변환
-    String salt = memberService.bringSalt(memberDTO.getId());
+    String salt = memberService.bringSalt(memberDTO.getId());    
+    if(salt != null) {
     MessageDigest md = MessageDigest.getInstance("SHA-256");
     md.update(salt.getBytes());
     md.update(memberDTO.getPw().getBytes());
     String hex = String.format("%064x", new BigInteger(1, md.digest()));
     memberDTO.setPw(hex);
+    }
 
     // -- 회원이 등록 되어있는지 Member Table에서 확인
     int result = memberService.loginMember(memberDTO);
@@ -47,7 +49,7 @@ public class MemberController implements WebMvcConfigurer {
 
       // -- 게시판에 Id와 패스워드 전달
       model.addAttribute("id", memberDTO.getId());
-      model.addAttribute("pw", memberDTO.getPw());
+      //model.addAttribute("pw", memberDTO.getPw());
 
       return "redirect:/board/boardList";
     }

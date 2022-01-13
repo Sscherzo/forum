@@ -6,11 +6,9 @@
 <meta charset="UTF-8">
 <title>로그인</title>
 <script type="text/javascript" src="../script/memberScript.js?ver=1"></script>
-<script type="text/javascript">
-	var result = $
-	{
-		msg
-	};
+<script type="text/javascript">	
+
+	var result = ${msg};
 
 	if (result == false) {
 		alert("아이디나 비밀번호가 일치하지 않습니다.");

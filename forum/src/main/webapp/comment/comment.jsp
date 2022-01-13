@@ -228,8 +228,6 @@ function fn_editReply(rno){
  *  댓글 불러오기
  */
 function getCommentList(){	
-	
-	
     
     $.ajax({
         type:'POST',
@@ -244,8 +242,7 @@ function getCommentList(){
             
             if(data.length > 0){
                 
-                for(i=0; i<data.length; i++){
-                	
+                for(i=0; i<data.length; i++){                	
                 	                	          	
                     html += "<div><table class='table'><tr><td width=\"220\">"   
                     
@@ -285,8 +282,7 @@ function getCommentList(){
             $("#commentList").html(html);
             
         },
-        error:function(request,status,error){
-            
+        error:function(request,status,error){            
        }
         
     });
