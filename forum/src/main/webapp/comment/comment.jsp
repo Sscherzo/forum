@@ -78,7 +78,7 @@ function fn_comment(){
             if(data=="success")
             {            	
                 getCommentList();
-                $("#comment").val("");
+                $("#comment_content").val('');
             }else if(data == "fail"){
             	alert("로그인후에 가능합니다.");
             }else if(data == "comment"){
