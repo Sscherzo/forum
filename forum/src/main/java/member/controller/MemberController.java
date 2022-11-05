@@ -66,10 +66,10 @@ public class MemberController implements WebMvcConfigurer {
       throws IOException, NoSuchAlgorithmException {
 
     // -- 아이디 체크
-    int loginCheckResult = memberService.idCheckMember(memberDTO);
+    int idCheckResult = memberService.idCheckMember(memberDTO);
 
     // -- 이미 등록된 아이인 경우
-    if (loginCheckResult == 1) {
+    if (idCheckResult == 1) {
       response.setContentType("text/html; charset=UTF-8");
       PrintWriter out = response.getWriter();
       out.println("<script>alert('이미 등록된 아이디입니다.'); </script>");
@@ -98,10 +98,7 @@ public class MemberController implements WebMvcConfigurer {
     // -- Member Table에 회원 데이터 기록
     memberDTO.setPw(hex);
     memberDTO.setSalt(salt);
-    int result = memberService.insertMember(memberDTO);
-
-    // -- 데이터 공유 + view 처리
-    model.addAttribute("result", result);
+    memberService.insertMember(memberDTO);   
 
     // -- 로그인 페이지
     return "loginForm.jsp";
