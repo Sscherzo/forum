@@ -209,10 +209,7 @@ public class BoardController {
     // -- 게시판 번호로 행을 가져와서 바뀐 내용을 update하고 상세보기 페이지로 넘어간다.
     BoardDTO _boardDTO = boardService.boardView(boardDTO.getSeq());
     _boardDTO.setContent(boardDTO.getContent());
-    boardService.boardModify(_boardDTO);
-
-    model.addAttribute("seq", boardDTO.getSeq());
-    model.addAttribute("boardDTO", _boardDTO);
+    boardService.boardModify(_boardDTO);   
 
     return "boardViewUpdate";
   }
