@@ -114,6 +114,9 @@ public class CommentController {
       return "fail";
     if (commentDTO.getComment_content() == null || commentDTO.getComment_content() == "")
       return "comment";   
+    
+    commentDTO.setBno(seq);
+    commentDTO.setComment_writer(id);
 
     commentService.commentWrite(commentDTO);
 
