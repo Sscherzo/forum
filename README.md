@@ -1,8 +1,8 @@
 # forum
- * 마지막 수정 날짜 2022.11.20.
+ * 마지막 수정 날짜 2022.11.20
  
 # Demonstration Video
-[![Video Label](http://img.youtube.com/vi/eGA_UTEbQNE/0.jpg)](https://youtu.be/eGA_UTEbQNE)
+[![Video Label](http://img.youtube.com/vi/1EnWdFjtGHg/0.jpg)](https://youtu.be/1EnWdFjtGHg)
 
 # Contents
 1.[Motivation](#motivation)  
