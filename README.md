@@ -305,8 +305,8 @@ $.ajax({
 *Ajax*를 컨트롤러가 사용하기 위해서 `@RestController`를 사용하였습니다.
 댓글은 삽입,삭제,수정이 가능하며 대댓글의 경우 깊이에 따른 들여쓰기를 해주었습니다. 댓글이 입력되면 Comments 옆에 댓글 수가 표시되며 글 제목에서도 코멘트 수를 확인 할 수 있습니다.
 
-![검색2](https://user-images.githubusercontent.com/90139096/209351102-66c2772e-40b9-4080-b7cd-36c3b62d9377.PNG)
+![검색2](https://user-images.githubusercontent.com/90139096/209351596-03b0630b-5a72-4828-b466-a54709df3465.PNG)
 
-![캡처](https://user-images.githubusercontent.com/90139096/134531174-b838b26a-c399-469e-8727-7b5c6aa33124.PNG)
+![댓글](https://user-images.githubusercontent.com/90139096/209351673-ffe106fd-f51d-4236-bd7b-a88b11fa4572.PNG)
 
 [:arrow_up_small: 기능 소개](#feature-introduction)
