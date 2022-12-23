@@ -79,8 +79,8 @@ JSP를 직접 실행하면 Controller에 연결이 안되므로 BoardListStart�
 만들어서 실행시켜 간접적으로 BoardList(게시판)가 실행되게 만들었습니다.
 
 *게시판 실행화면*
-![게시판](https://user-images.githubusercontent.com/90139096/209348409-cda168c1-de17-49e4-bffb-783c59e67582.PNG)
 
+![게시판](https://user-images.githubusercontent.com/90139096/209348409-cda168c1-de17-49e4-bffb-783c59e67582.PNG)
 
 게시판에서 실행되는 동작들은 각각의 Controller를 거쳐 Mybatis를 
 통해 DB와 연결되어 SQL을 사용하여 값을 가져오고 값을 받은 Controller는 용도에 맞게 데이터를 가공해 그 데이터를 View를 통해 보여주게 됩니다. 
