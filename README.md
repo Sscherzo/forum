@@ -281,7 +281,7 @@ View에서는 시작페이지가 보여줄 하단 페이지 링크수 보다 크
   
 검색된 결과가 없다면 다음과 같이 나옵니다.
 
-![캡처](https://user-images.githubusercontent.com/90139096/134515078-71cb434c-53a2-46ee-ae47-225059f93f00.PNG)
+![결과없음](https://user-images.githubusercontent.com/90139096/209352064-db5ab49f-b109-483f-93d0-05f9b32127d7.PNG)
 
 
 [:arrow_up_small: 기능 소개](#feature-introduction)
