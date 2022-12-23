@@ -1,5 +1,5 @@
 # forum
- * 마지막 수정 날짜 2022.11.20
+ * 마지막 수정 날짜 2022.12.23
  
 # Demonstration Video
 [![Video Label](http://img.youtube.com/vi/1EnWdFjtGHg/0.jpg)](https://youtu.be/1EnWdFjtGHg)
@@ -261,7 +261,7 @@ View에서는 시작페이지가 보여줄 하단 페이지 링크수 보다 크
 
 # 검색
 
-![캡처](https://user-images.githubusercontent.com/90139096/134514378-1772ae54-cea6-4b1b-b6a8-3982da96e320.PNG)
+![검색1](https://user-images.githubusercontent.com/90139096/209350552-cbc1bae9-1f88-4875-8030-636675b7f0f6.PNG)
 
 검색은 제목과 내용을 한번에 검색합니다.그리고 검색된 갯수에 맞게
 페이징 처리를 해줍니다.  
@@ -305,7 +305,7 @@ $.ajax({
 *Ajax*를 컨트롤러가 사용하기 위해서 `@RestController`를 사용하였습니다.
 댓글은 삽입,삭제,수정이 가능하며 대댓글의 경우 깊이에 따른 들여쓰기를 해주었습니다. 댓글이 입력되면 Comments 옆에 댓글 수가 표시되며 글 제목에서도 코멘트 수를 확인 할 수 있습니다.
 
-![캡처](https://user-images.githubusercontent.com/90139096/134531325-f2dd5e80-35b5-4c06-b1f6-f1c3ab8a8adc.PNG)
+![검색2](https://user-images.githubusercontent.com/90139096/209351102-66c2772e-40b9-4080-b7cd-36c3b62d9377.PNG)
 
 ![캡처](https://user-images.githubusercontent.com/90139096/134531174-b838b26a-c399-469e-8727-7b5c6aa33124.PNG)
 
