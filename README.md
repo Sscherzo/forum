@@ -213,7 +213,7 @@ DefaultFileRenamePolicy()를 사용하면 파일 이름뒤에 1을 붙여
 
 # 목록 및 페이징
 
-![캡처](https://user-images.githubusercontent.com/90139096/134497631-a3ca5d90-6740-43c5-9a0f-a18bb1007207.PNG)
+![게시판2](https://user-images.githubusercontent.com/90139096/209349793-958f66b3-1839-4042-8d2b-87e22476ccf5.PNG)
 
 
 **목록**은 get방식으로 받는 pg(페이지)를 통해 결정됩니다.목록은 한페이지에 5개의 글을 보여주는 방식이며 *Rownum*을 사용했습니다.
