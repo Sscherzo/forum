@@ -40,7 +40,7 @@ MVC 패턴을 가장 잘 나타낼 수 있는 것이 게시판이라고 생각�
    - Jsp
    - Spring
    - MyBatis
-   - 
+   - Ajax
 
 [:arrow_up: 목차로](#contents)
 
