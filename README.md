@@ -1,9 +1,9 @@
 # Forum
- * 마지막 수정 날짜 2022.12.23
+ * 마지막 수정 날짜
  
 # Demonstration Video
 [![Video Label](http://img.youtube.com/vi/1EnWdFjtGHg/0.jpg)](https://youtu.be/4jZ8NcwX8eo)
-← 옆의 비디오를 클릭해주세요.
+← 옆의 동영상을 클릭해주세요.
 # Contents
 1.[Motivation](#motivation)  
 2.[Code Style](#code-style)   
